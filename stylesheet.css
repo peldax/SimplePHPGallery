@@ -46,9 +46,25 @@ html, body
     border-radius: 1vw;
 }
 
-.center img
+#showtime
 {
+    position: absolute;
+    top: 5vh;
+    left: 0;
 
+    width: 100%;
+}
+
+#showtime #center
+{
+    width: 80vw;
+    max-height: 80vh;
+    margin: 0 auto 0 auto;
+}
+
+#center img
+{
+    max-width: 100%;
 }
 
 /* *********** FOOTER */
