@@ -71,7 +71,7 @@ foreach ($dirs as $x)
     echo '
 <td>
     <a href="index.php'.$next_parameter.$x.'">
-        <div class="item dir">
+        <div class="item">
             <p>'.$x.'</p>
         </div>
     </a>
@@ -93,7 +93,7 @@ foreach ($images as $x)
     }
     echo '
 <td>
-    <div class="item image">
+    <div class="item">
         <img width="100%" height="100%" src="'.$current_dir.'/'.$x.'" onclick="fullscreen(\''.$current_dir.'/'.$x.'\')" />
     </div>
 </td>';

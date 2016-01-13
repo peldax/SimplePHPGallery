@@ -32,7 +32,7 @@ html, body
     cursor: pointer;
 }
 
-.dir p
+.item p
 {
     margin: 0;
     padding: 0;
@@ -41,12 +41,12 @@ html, body
     line-height: 8vw;
 }
 
-.image img
+.item img
 {
     border-radius: 1vw;
 }
 
-.fullsize
+.center img
 {
 
 }
