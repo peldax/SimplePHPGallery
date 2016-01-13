@@ -1,2 +1,13 @@
-# SimplePHPGallery
-Simple web gallery written in PHP - the one I use on my website (http://gallery.peldax.com)
+# Simple PHP Gallery
+
+Simple web gallery written in PHP - the one I use on my personal website (http://gallery.peldax.com).
+
+Feel free to use or contribute.
+
+## How to use
+
+1.) Download the sources and upload them to your server.
+
+2.) Create a directory named "album" in the same folder.
+
+3.) Copy your pictures/directories into the folder.
