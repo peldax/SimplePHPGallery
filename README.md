@@ -11,3 +11,5 @@ Feel free to use or contribute.
 2.) Create a directory named "album" in the same folder.
 
 3.) Copy your pictures/directories into the folder.
+
+4.) In the index.php, change HTML elements such as <head> and <div id="footer"> to your needs. 
