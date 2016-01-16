@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL | E_STRICT);
 
 // Parse parameters
 
@@ -8,21 +9,21 @@ $folder = isset($_GET["folder"]) ? $_GET["folder"] : "";
 
 if ($year == "")
 {
-    $current_dir = 'album';
-    $next_parameter = '?year=';
+    $current_dir = "album";
+    $next_parameter = "?year=";
 }
 else if ($month == "")
 {
-    $current_dir = 'album/' . $year;
-    $next_parameter = '?year='.$year.'&month=';
+    $current_dir = "album/{$year}";
+    $next_parameter = "?year={$year}&month=";
 }
 else if ($folder == "")
 {
-    $current_dir = 'album/' . $year . '/' . $month;
-    $next_parameter = '?year='.$year.'&month='.$month.'&folder=';
+    $current_dir = "album/{$year}/{$month}";
+    $next_parameter = "?year={$year}&month={$month}&folder=";
 }
 else
-    $current_dir = 'album/'.$year.'/'.$month.'/'.$folder;
+    $current_dir = "album/{$year}/{$month}/{$folder}";
 
 // Read directory
 
