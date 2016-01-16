@@ -2,9 +2,9 @@
 
 // Parse parameters
 
-$year = $_GET["year"];
-$month = $_GET["month"];
-$folder = $_GET["folder"];
+$year = isset($_GET["year"]) ? $_GET["year"] : "";
+$month = isset($_GET["month"]) ? $_GET["month"] : "";
+$folder = isset($_GET["folder"]) ? $_GET["folder"] : "";
 
 if ($year == "")
 {
