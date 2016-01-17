@@ -11,15 +11,19 @@ html, body
     max-width: 100vw;
 }
 
+a, p
+{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* *********** TABLE */
+
 #album-div
 {
     width: 52vw;
     margin: 100px auto 0 auto;
-}
-
-#album a
-{
-    text-decoration: none;
 }
 
 .item
@@ -34,17 +38,27 @@ html, body
 
 .item p
 {
-    margin: 0;
-    padding: 0;
     color: #FFFFFF;
     text-align: center;
     line-height: 8vw;
+}
+
+.item:hover
+{
+    border-color: #C00000;
+}
+
+.item:hover > p
+{
+    color: #C00000;
 }
 
 .item img
 {
     border-radius: 1vw;
 }
+
+/* *********** SHOWTIME */
 
 #showtime
 {
@@ -65,6 +79,44 @@ html, body
 #center img
 {
     max-width: 100%;
+}
+
+/* *********** HOME */
+
+#home
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    margin: 50px;
+}
+
+#home #arrow
+{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid #ffffff;
+}
+
+#home p
+{
+    color: #FFFFFF;
+    font-size: 25px;
+    display: inline-block;
+}
+
+#home:hover > p
+{
+    color: #C00000;
+}
+
+#home:hover > #arrow
+{
+    border-right-color: #C00000;
 }
 
 /* *********** FOOTER */

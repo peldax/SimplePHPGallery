@@ -15,6 +15,10 @@
 	</head>
 	<body>
 	    <div id="container">
+            <a id ="home" href="http://www.peldax.com">
+                <div id="arrow"></div>
+                <p>Home</p>
+            </a>
             <div id="showtime">
                 <div id="left" onclick="previous()"></div>
                 <div id="center" onclick="exitfullscreen()">
