@@ -97,7 +97,8 @@ foreach ($images as $x)
     <div class="item">
         <img width="100%" height="100%" src="photoThumbnail.php?source='.$current_dir.'/'.$x.'&height=150&width=150" onclick="fullscreen(\''.$current_dir.'/'.$x.'\')" />
     </div>
-</td>';
+</td>
+';
     $items_in_row++;
     if ($items_in_row == $max_items_in_row)
     {

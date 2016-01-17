@@ -75,12 +75,14 @@ a, p
     width: 80vw;
     margin: 0 auto 0 auto;
     background: #000000;
+    border-radius: 2vw;
 }
 
 #showtime #center img
 {
     display: block;
-    max-width: 98%;
+    max-width: 100%;
+    padding: 15px;
     margin: auto;
 }
 
