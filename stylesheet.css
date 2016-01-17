@@ -86,11 +86,11 @@ a, p
 
 #home
 {
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    top: 0;
     left: 0;
     padding: 0;
-    margin: 50px;
+    margin: 20px;
 }
 
 #home #arrow
@@ -100,7 +100,8 @@ a, p
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 15px solid #ffffff;
+    border-right: 25px solid #ffffff;
+    margin-right: 5px;
 }
 
 #home p
