@@ -81,9 +81,15 @@ a, p
 #showtime #center img
 {
     display: block;
-    max-width: calc(100% - 30px);
     padding: 15px;
     margin: auto;
+    max-width: calc(100% - 30px);
+
+    pointer-events: none;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 
 /* *********** HOME */
