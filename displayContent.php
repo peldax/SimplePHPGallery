@@ -95,7 +95,7 @@ foreach ($images as $x)
     echo '
 <td>
     <div class="item">
-        <img width="100%" height="100%" src="'.$current_dir.'/'.$x.'" onclick="fullscreen(\''.$current_dir.'/'.$x.'\')" />
+        <img width="100%" height="100%" src="photoThumbnail.php?source='.$current_dir.'/'.$x.'&height=150&width=150" onclick="fullscreen(\''.$current_dir.'/'.$x.'\')" />
     </div>
 </td>';
     $items_in_row++;
