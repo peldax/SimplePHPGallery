@@ -64,22 +64,24 @@ a, p
 #showtime
 {
     position: absolute;
-    top: 5vh;
+    top: 0;
     left: 0;
-
     width: 100%;
+    margin: 30px 0 30px 0;
 }
 
 #showtime #center
 {
     width: 80vw;
-    max-height: 80vh;
     margin: 0 auto 0 auto;
+    background: #000000;
 }
 
-#center img
+#showtime #center img
 {
-    max-width: 100%;
+    display: block;
+    max-width: 98%;
+    margin: auto;
 }
 
 /* *********** HOME */
