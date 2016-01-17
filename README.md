@@ -8,9 +8,9 @@ Feel free to use or contribute.
 
 1.) Download the sources and upload them to your server.
 
-2.) Create a directory named "album" in the same folder.
+2.) Create a directory named "cache" (for cached thumbnails) and "album" (for your images) in the same folder.
 
-3.) Copy your pictures/directories into the folder.
+3.) Copy your pictures/directories into the "album" folder.
 
 4.) In the index.php, change HTML elements such as head and footer to your needs.
 
