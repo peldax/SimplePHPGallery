@@ -26,10 +26,12 @@ Feel free to use or contribute.
 * v1.0 - Very first version
 * v2.0 - Thumbnails and caching
 * v2.1 - Home button and hover effects
-* v2.2 - Visual upgrade for fullscreen
+* v2.2 - Zoom visual upgrade
+* v3.0 - Cycle through images using keypress or mouse
 
 ## TODO
 
-1. Cycle through images
-2. Slideshow
-3. Folder preview
+* Slideshow
+* Smooth transition
+* Folder preview
+* Blur background

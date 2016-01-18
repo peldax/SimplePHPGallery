@@ -20,17 +20,14 @@
                 <p>Home</p>
             </a>
             <div id="showtime">
-                <div id="left" onclick="previous()"></div>
-                <div id="center" onclick="exitfullscreen()">
-                </div>
-                <div id="right" onclick="next()"></div>
+                <div id="left" onclick="previous()">&nbsp;</div>
+                <div id="center" onclick="exitFullscreen()"></div>
+                <div id="right" onclick="next()">&nbsp;</div>
             </div>
 	        <div id="album-div">
-	            <table id="album">
 <?php
 require 'displayContent.php';
 ?>
-                </table>
             </div>
             <div id="footer">
                 <p>©Václav Pelíšek, 2016</p>

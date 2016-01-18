@@ -59,6 +59,11 @@ a, p
     border-radius: 1vw;
 }
 
+#links
+{
+    display: none;
+}
+
 /* *********** SHOWTIME */
 
 #showtime
@@ -66,16 +71,34 @@ a, p
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    margin: 30px 0 30px 0;
+    width: 98%;
+    margin: 30px 1% 30px 1%;
+    background: #000000;
+    border-radius: 20px;
 }
 
 #showtime #center
 {
-    width: 80vw;
+    width: 80%;
     margin: 0 auto 0 auto;
-    background: #000000;
-    border-radius: 20px;
+}
+
+#showtime #left
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10%;
+    min-height: 100%;
+}
+
+#showtime #right
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10%;
+    min-height: 100%;
 }
 
 #showtime #center img
