@@ -68,11 +68,11 @@ a, p
 
 #showtime
 {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 98%;
-    margin: 40px 1% 40px 1%;
+    width: 98vw;
+    margin: 1vh 1vw 1vh 1vw;
     background: #000000;
     border-radius: 20px;
 }
@@ -115,10 +115,9 @@ a, p
     display: block;
     padding: 15px;
     margin: auto;
-    max-width: calc(100% - 30px);
-
+    max-width: calc(100vw - 30px);
+    max-height: calc(98vh - 50px);
     pointer-events: none;
-
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
