@@ -25,13 +25,13 @@ Feel free to use or contribute.
 
 * v1.0 - Very first version
 * v2.0 - Thumbnails and caching
-* v2.1 - Home button and hover effects
-* v2.2 - Zoom mode visual upgrade
+* v2.1 - Home button and some hover effects
+* v2.2 - Zoom mode - visual upgrade
 * v3.0 - Cycle through images using keypress or mouse
-* v3.1 - Zoom mode smooth transition
+* v3.1 - Zoom mode - smooth transition between images
 
 ## TODO
 
 * Automatic slideshow
-* Folder preview
-* Blur background
+* Folder preview?
+* Blur background?
