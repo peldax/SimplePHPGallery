@@ -72,7 +72,7 @@ a, p
     top: 0;
     left: 0;
     width: 98%;
-    margin: 30px 1% 30px 1%;
+    margin: 40px 1% 40px 1%;
     background: #000000;
     border-radius: 20px;
 }
@@ -83,10 +83,9 @@ a, p
     margin: 0 auto 0 auto;
 }
 
-#showtime #left
+#showtime #left, #showtime #right
 {
     position: absolute;
-    left: 0;
     top: 0;
     width: 10%;
     min-height: 100%;
@@ -94,11 +93,21 @@ a, p
 
 #showtime #right
 {
-    position: absolute;
     right: 0;
-    top: 0;
-    width: 10%;
-    min-height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#showtime #left
+{
+    left: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#showtime #left:hover, #showtime #right:hover
+{
+    background: #303030;
 }
 
 #showtime #center img

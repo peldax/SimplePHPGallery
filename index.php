@@ -20,9 +20,9 @@
                 <p>Home</p>
             </a>
             <div id="showtime">
-                <div id="left" onclick="previous()">&nbsp;</div>
+                <div id="left" onclick="previous()"></div>
                 <div id="center" onclick="exitFullscreen()"></div>
-                <div id="right" onclick="next()">&nbsp;</div>
+                <div id="right" onclick="next()"></div>
             </div>
 	        <div id="album-div">
 <?php
