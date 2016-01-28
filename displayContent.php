@@ -15,15 +15,19 @@ else if ($month == "")
 {
     $current_dir = "album/{$year}";
     $next_parameter = "?year={$year}&month=";
+    $parent_parameter = "";
 }
 else if ($folder == "")
 {
     $current_dir = "album/{$year}/{$month}";
     $next_parameter = "?year={$year}&month={$month}&folder=";
+    $parent_parameter = "?year={$year}";
 }
 else
+{
     $current_dir = "album/{$year}/{$month}/{$folder}";
-
+    $parent_parameter = "?year={$year}&month={$month}";
+}
 // Read directory
 $dirs=array();
 $images=array();
@@ -99,7 +103,11 @@ foreach ($images as $x)
     echo '
 <td>
     <div class="item">
-        <img width="100%" height="100%" src="photoThumbnail.php?source='.$current_dir.'/'.$x.'&height=150&width=150" onclick="fullscreen('.$index.')" />
+        <img width="100%" height="100%"
+        alt="Image from Václav Pelíšek\'s gallery at gallery.peldax.com"
+        title="A collection of photos from my experiences and adventures"
+        src="photoThumbnail.php?source='.$current_dir.'/'.$x.'&height=150&width=150"
+        onclick="fullscreen('.$index.')" />
     </div>
 </td>
 ';
@@ -112,10 +120,22 @@ foreach ($images as $x)
         $items_in_row = 0;
     }
 }
-// Close table row
-if ($items_in_row != $max_items_in_row)
+if ($items_in_row == 0)
 {
-    echo '</tr>';
+    echo '<tr>';
+}
+if ($current_dir != "album")
+{
+    echo '
+<td>
+    <a href="index.php'.$parent_parameter.'">
+        <div class="item">
+            <p>&#8617;</p>
+        </div>
+    </a>
+</td>
+</tr>
+    ';
 }
 
 // Add full image links to invisible div
