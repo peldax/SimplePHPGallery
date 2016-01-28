@@ -5,9 +5,10 @@
 		<title>peldax | Gallery</title>
 		<meta charset="UTF-8">
 		<meta name="author" content="Václav Pelíšek">
-		<meta name="description" content="Václav Pelíšek\'s gallery">
+		<meta name="description" content="Václav Pelíšek\'s gallery - A collection of photos from his experiences and adventures">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="keywords" content="václav, pelíšek, pelda, peldax, personal, page">
+        <meta name="robots" content="index, follow">
 		<script src="scripts.js"></script>
         <link href="favicon.png" rel="icon" type="image/png" sizes="48x48" />
 		<link href="stylesheet.css" rel="stylesheet" type="text/css">
@@ -25,6 +26,7 @@
                 <div id="right" onclick="next()"></div>
             </div>
 	        <div id="album-div">
+                <h1>peldax's Gallery</h1>
 <?php
 require 'displayContent.php';
 ?>

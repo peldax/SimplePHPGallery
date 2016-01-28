@@ -19,6 +19,16 @@ a, p
     margin: 0;
 }
 
+h1, p, a
+{
+    color: #FFFFFF;
+}
+
+.underline
+{
+    text-decoration: underline;
+}
+
 /* *********** TABLE */
 
 #album-div
@@ -39,7 +49,6 @@ a, p
 
 .item p
 {
-    color: #FFFFFF;
     text-align: center;
     line-height: 8vw;
 }

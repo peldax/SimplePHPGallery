@@ -19,16 +19,17 @@ Feel free to use or contribute.
 
 ## Other Contributors
 
-[Jiří Fatka](https://github.com/NTSFka) - script for image thumbnailing.
+[Jiří Fatka](https://github.com/NTSFka) - script for image thumbnail's.
 
 ## Changelog
 
 * v1.0 - Very first version
 * v2.0 - Thumbnails and caching
 * v2.1 - Home button and some hover effects
-* v2.2 - Zoom mode - visual upgrade
+* v2.2 - Fullscreen mode - visual upgrade
 * v3.0 - Cycle through images using keypress or mouse
-* v3.1 - Zoom mode - smooth transition between images
+* v3.1 - Fullscreen mode - smooth transition between images
+* v3.2 - Parent dir button, SEO, Error pages
 
 ## TODO
 
