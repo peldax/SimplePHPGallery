@@ -5,7 +5,7 @@
     <title>peldax | Gallery</title>
     <meta charset="UTF-8">
     <meta name="author" content="Václav Pelíšek">
-    <meta name="description" content="Václav Pelíšek's gallery - A collection of photos from his experiences and adventures">
+    <meta name="description" content="Václav Pelíšek\'s gallery - A collection of photos from his experiences and adventures">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="václav, pelíšek, pelda, peldax, personal, page">
     <meta name="robots" content="index, follow">
@@ -26,8 +26,18 @@
         <div id="right" onclick="next()"></div>
     </div>
     <div id="album-div">
-        <h1>400 - Bad Request</h1>
-        <p>Please use <a class="underline" href="/">this</a> link to redirect.</p>
+<?php
+if (http_response_code() < 400)
+{
+    header("Location: index.php");
+    return;
+}
+$errorcode = $_SERVER["REDIRECT_STATUS"];
+echo "
+<h1>Oups! Something went wrong (code {$errorcode})</h1>
+";
+?>
+        <p>Please use <a class="redirect" href="/">this</a> link to redirect.</p>
     </div>
     <div id="footer">
         <p>©Václav Pelíšek, 2016</p>

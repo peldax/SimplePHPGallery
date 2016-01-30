@@ -24,9 +24,14 @@ h1, p, a
     color: #FFFFFF;
 }
 
-.underline
+.redirect
 {
     text-decoration: underline;
+}
+
+.redirect:hover
+{
+    color: #C00000;
 }
 
 /* *********** TABLE */
