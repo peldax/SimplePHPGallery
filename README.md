@@ -24,12 +24,13 @@ Feel free to use or contribute.
 ## Changelog
 
 * v1.0 - Very first version
-* v2.0 - Thumbnails and caching
-* v2.1 - Home button and some hover effects
+* v2.0 - Thumbnails
+* v2.1 - Home button, visual upgrade
 * v2.2 - Fullscreen mode - visual upgrade
 * v3.0 - Cycle through images using keypress or mouse
 * v3.1 - Fullscreen mode - smooth transition between images
 * v3.2 - Parent dir button, SEO, Error pages
+* v3.3 - Loading box
 
 ## TODO
 
