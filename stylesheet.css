@@ -78,6 +78,7 @@ h1, p, a
 #showtime
 {
     position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 98vw;
@@ -124,12 +125,33 @@ h1, p, a
     display: block;
     padding: 15px;
     margin: auto;
-    max-width: calc(100vw - 30px);
+    max-width: calc(100% - 30px);
     max-height: calc(98vh - 50px);
     pointer-events: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+}
+
+#loading
+{
+    display: none;
+    position: fixed;
+    z-index: 11;
+    width: 200px;
+    height: 100px;
+    top: calc(50vh - 50px);
+    left: calc(50% - 100px);
+    border: 3px solid #FFFFFF;
+    border-radius: 10px;
+    background: #303030;
+}
+
+#loading p
+{
+    line-height: 100px;
+    font-size: 1.5em;
+    text-align: center;
 }
 
 /* *********** HOME */

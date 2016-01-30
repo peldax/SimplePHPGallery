@@ -9,11 +9,11 @@ function refreshLinks()
 
 function fullscreen(index)
 {
-    refreshLinks();
+    imageLoading();
     current_index = index;
     fullscreen_mode = true;
     var element = document.getElementById('center');
-    element.innerHTML= '<img src="' + links[index].innerHTML + '"/>';
+    element.innerHTML= '<img src="' + links[index].innerHTML + '" onload="imageLoaded()"/>';
 }
 
 function exitFullscreen()
@@ -23,8 +23,19 @@ function exitFullscreen()
     element.innerHTML= '';
 }
 
+function imageLoading()
+{
+    document.getElementById('loading').style.display = 'block';
+}
+
+function imageLoaded()
+{
+    document.getElementById('loading').style.display = 'none';
+}
+
 function previous()
 {
+    imageLoading();
     current_index--;
     var element = document.getElementById('center').getElementsByTagName('img')[0];
     if (current_index == -1)
@@ -34,14 +45,13 @@ function previous()
 
 function next()
 {
+    imageLoading();
     current_index++;
     var element = document.getElementById('center').getElementsByTagName('img')[0];
     if (current_index == links.length)
         current_index = 0;
     element.src = links[current_index].innerHTML;
 }
-
-document.onkeydown = checkKey;
 
 function checkKey(e)
 {
@@ -58,3 +68,6 @@ function checkKey(e)
             exitFullscreen(); return;
     }
 }
+
+document.onkeydown = checkKey;
+window.onload = refreshLinks;

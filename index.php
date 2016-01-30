@@ -20,6 +20,9 @@
                 <div id="arrow"></div>
                 <p>Home</p>
             </a>
+            <div id="loading">
+                <p>Loading...</p>
+            </div>
             <div id="showtime">
                 <div id="left" onclick="previous()"></div>
                 <div id="center" onclick="exitFullscreen()"></div>
