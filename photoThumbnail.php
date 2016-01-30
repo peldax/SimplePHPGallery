@@ -12,8 +12,8 @@ if (!isset($_GET["source"]) || !isset($_GET["height"]) || !isset($_GET["width"])
     exit("Parameters are required.");
 }
 $source = $_GET["source"];
-$width = $_GET['width'];
-$height = $_GET['height'];
+$width = min($_GET['width'], 2000);
+$height = min($_GET['height'], 2000);
 $color_css = isset($_GET['color']) ? $_GET['color'] : "202020";
 $header = isset($_GET['no-header']) ? false : true;
 
