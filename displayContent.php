@@ -66,6 +66,22 @@ echo '<table id="album">';
 $items_in_row = 0;
 $max_items_in_row = 5;
 
+// Add link to parent folder tp the table
+if ($current_dir != "album")
+{
+    echo '
+<tr>
+<td>
+    <a href="index.php' . $parent_parameter . '">
+        <div class="item">
+            <p>&#8617;</p>
+        </div>
+    </a>
+</td>
+    ';
+    $items_in_row++;
+}
+
 // Add directories to the table
 foreach ($dirs as $x)
 {
@@ -120,22 +136,11 @@ foreach ($images as $x)
         $items_in_row = 0;
     }
 }
-if ($items_in_row == 0)
+
+// Close row if necessary
+if ($items_in_row != $max_items_in_row)
 {
     echo '<tr>';
-}
-if ($current_dir != "album")
-{
-    echo '
-<td>
-    <a href="index.php'.$parent_parameter.'">
-        <div class="item">
-            <p>&#8617;</p>
-        </div>
-    </a>
-</td>
-</tr>
-    ';
 }
 
 // Add full image links to invisible div
