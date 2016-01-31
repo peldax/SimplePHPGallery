@@ -31,9 +31,9 @@ Feel free to use or contribute.
 * v3.1 - Fullscreen mode - smooth transition between images
 * v3.2 - Parent dir button, SEO, Error pages
 * v3.3 - Loading box
+    - v3.3.1 - important security hotfix
 
 ## TODO
 
 * Automatic slideshow
-* Folder preview?
 * Blur background?
