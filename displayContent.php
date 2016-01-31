@@ -59,6 +59,7 @@ while(($var=readdir($directory)) !== FALSE)
     }
 }
 closedir($directory);
+sort($dirs);
 
 // Create table
 echo '<table id="album">';

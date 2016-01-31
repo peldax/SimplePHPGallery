@@ -15,7 +15,7 @@ Feel free to use or contribute.
 
 1. Download the sources and upload them to your server.
 2. Create a directory named "cache" (for cached thumbnails) and "album" (for your images) in the same folder.
-3. Copy your pictures/directories into the "album" folder.
+3. Copy your pictures/directories into the "album" folder (album/year/month/folder/image).
 
 ## How to customize
 
@@ -39,6 +39,7 @@ Feel free to use or contribute.
 * v3.3 - Loading box
     - v3.3.1 - Important security hotfix
 * v4.0 - Automatic slideshow, Sticky footer, Fullscreen mode - blur background
+* v4.1 - Directories are sorted
 
 ## TODO
 
