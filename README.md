@@ -1,6 +1,7 @@
 # Simple PHP Gallery
 
 Simple web gallery written in PHP - the one I use on my personal website (http://gallery.peldax.com).
+Gallery doesn't require jQuery or any other framework.
 
 Gallery is designed to be:
 
@@ -10,16 +11,21 @@ Gallery is designed to be:
 
 Feel free to use or contribute.
 
-## How to use
+## How to set
 
 1. Download the sources and upload them to your server.
 2. Create a directory named "cache" (for cached thumbnails) and "album" (for your images) in the same folder.
 3. Copy your pictures/directories into the "album" folder.
-4. In the index.php, change HTML elements such as head and footer to your needs.
+
+## How to customize
+
+1. Style your gallery in stylesheet.css.
+2. Change HTML elements such as head and footer to your needs in index.php.
+3. Customize your error page in error.php.
 
 ## Other Contributors
 
-[Jiří Fatka](https://github.com/NTSFka) - script for image thumbnail's.
+[Jiří Fatka](https://github.com/NTSFka) - script for image thumbnails.
 
 ## Changelog
 
@@ -31,9 +37,10 @@ Feel free to use or contribute.
 * v3.1 - Fullscreen mode - smooth transition between images
 * v3.2 - Parent dir button, SEO, Error pages
 * v3.3 - Loading box
-    - v3.3.1 - important security hotfix
+    - v3.3.1 - Important security hotfix
+* v4.0 - Automatic slideshow, Sticky footer, Fullscreen mode - blur background
 
 ## TODO
 
-* Automatic slideshow
-* Blur background?
+Nothing at the moment.
+Do you miss some important feature? Feel free to contact me!

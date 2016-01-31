@@ -9,6 +9,7 @@ html, body
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
 
+    height: 100%;
     max-width: 100vw;
 }
 
@@ -41,7 +42,8 @@ h1, p, a
 #album-div
 {
     width: 52vw;
-    margin: 100px auto 100px auto;
+    margin: 0 auto;
+    padding: 100px 0;
 }
 
 .item
@@ -49,7 +51,7 @@ h1, p, a
     width: 8vw;
     height: 8vw;
     border: 2px solid #FFFFFF;
-    border-radius: 1vw;
+    border-radius: 10px;
     margin: 1vw;
     cursor: pointer;
 }
@@ -72,7 +74,7 @@ h1, p, a
 
 .item img
 {
-    border-radius: 1vw;
+    border-radius: 10px;
 }
 
 #links
@@ -80,27 +82,60 @@ h1, p, a
     display: none;
 }
 
-/* *********** SHOWTIME */
+/* *********** BLUR */
 
-#showtime
+.blur
+{
+    filter: blur(5px);
+    -moz-filter: blur(5px);
+    -webkit-filter: blur(5px);
+    transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* *********** SLIDESHOW */
+
+#slideshow, #fullscreen
 {
     position: fixed;
     z-index: 10;
     top: 0;
     left: 0;
-    width: 98vw;
-    margin: 1vh 1vw 1vh 1vw;
+    width: 98%;
+    margin: 1vh 1% 1vh 1%;
     background: #000000;
     border-radius: 20px;
 }
 
-#showtime #center
+#slideshow #scenter
+{
+    width: 100%;
+    margin: 0 auto 0 auto;
+}
+
+#slideshow #scenter img
+{
+    display: block;
+    padding: 15px;
+    margin: auto;
+    max-width: calc(100% - 30px);
+    max-height: calc(98vh - 30px);
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+/* *********** FULLSCREEN */
+
+#fullscreen #fcenter
 {
     width: 80%;
     margin: 0 auto 0 auto;
 }
 
-#showtime #left, #showtime #right
+#fullscreen #left, #fullscreen #right
 {
     position: absolute;
     top: 0;
@@ -108,37 +143,39 @@ h1, p, a
     min-height: 100%;
 }
 
-#showtime #right
+#fullscreen #right
 {
     right: 0;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
-#showtime #left
+#fullscreen #left
 {
     left: 0;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
 
-#showtime #left:hover, #showtime #right:hover
+#fullscreen #left:hover, #fullscreen #right:hover
 {
     background: #303030;
 }
 
-#showtime #center img
+#fullscreen #fcenter img
 {
     display: block;
     padding: 15px;
     margin: auto;
     max-width: calc(100% - 30px);
-    max-height: calc(98vh - 50px);
+    max-height: calc(98vh - 30px);
     pointer-events: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
 }
+
+/* *********** LOADING BOX */
 
 #loading
 {
@@ -161,9 +198,9 @@ h1, p, a
     text-align: center;
 }
 
-/* *********** HOME */
+/* *********** MENU */
 
-#home
+#buttons
 {
     position: absolute;
     top: 0;
@@ -172,7 +209,17 @@ h1, p, a
     margin: 20px;
 }
 
-#home #arrow
+#buttons *
+{
+    cursor: pointer;
+}
+
+#buttons > div
+{
+    margin-top: 15px;
+}
+
+#hbutton #arrow
 {
     display: inline-block;
     width: 0;
@@ -183,29 +230,49 @@ h1, p, a
     margin-right: 5px;
 }
 
-#home p
+#sbutton #square
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    margin-right: 5px;
+}
+
+#hbutton p, #sbutton p
 {
     color: #FFFFFF;
     font-size: 25px;
     display: inline-block;
 }
 
-#home:hover > p
+#hbutton:hover > p, #sbutton:hover > p
 {
     color: #C00000;
 }
 
-#home:hover > #arrow
+#hbutton:hover > #arrow
 {
     border-right-color: #C00000;
 }
 
+#sbutton:hover > #square
+{
+    background: #C00000;
+}
+
 /* *********** FOOTER */
+
+#container
+{
+    min-height: 100%;
+    margin-bottom: -20px;
+}
 
 #footer
 {
-    position: fixed;
-    width: 100vw;
+    position: relative;
+    width: 100%;
     bottom: 0;
     text-align: center;
 
@@ -217,9 +284,9 @@ h1, p, a
     margin: 0;
     padding: 0;
 
-    font-size: 0.8em;
+    font-size: 13px;
 
     color: #ffffff;
 
-    line-height: 1.5em;
+    line-height: 20px;
 }

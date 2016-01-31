@@ -1,27 +1,6 @@
-var current_index = 0;
-var fullscreen_mode = false;
 var links = [];
 
-function refreshLinks()
-{
-    links = document.getElementById('links').getElementsByTagName('p');
-}
-
-function fullscreen(index)
-{
-    imageLoading();
-    current_index = index;
-    fullscreen_mode = true;
-    var element = document.getElementById('center');
-    element.innerHTML= '<img src="' + links[index].innerHTML + '" onload="imageLoaded()"/>';
-}
-
-function exitFullscreen()
-{
-    fullscreen_mode = false;
-    var element = document.getElementById('center');
-    element.innerHTML= '';
-}
+// Loading box
 
 function imageLoading()
 {
@@ -33,40 +12,117 @@ function imageLoaded()
     document.getElementById('loading').style.display = 'none';
 }
 
+// Slideshow functions
+
+var slideshow_mode = false;
+
+function slideshow()
+{
+    if (links.length == 0)
+    {
+        alert("There are no images in this folder.");
+        return;
+    }
+    imageLoading();
+    slideshow_mode = true;
+    document.getElementById('container').classList.add('blur');
+    document.getElementById('footer').classList.add('blur');
+    document.getElementById('scenter').innerHTML= '<img src="' + links[0].innerHTML + '" onload="imageLoaded()"/>';
+    setTimeout(slideshowNext, 7000, 1);
+}
+
+function slideshowNext(index)
+{
+    if (!slideshow_mode)
+        return;
+    if (index == links.length)
+        exitSlideshow();
+    imageLoading();
+    document.getElementById('scenter').getElementsByTagName('img')[0].src = links[index].innerHTML;
+    setTimeout(slideshowNext, 7000, index + 1);
+}
+
+function exitSlideshow()
+{
+    slideshow_mode = false;
+    document.getElementById('container').classList.remove('blur');
+    document.getElementById('footer').classList.remove('blur');
+    document.getElementById('scenter').innerHTML = '';
+}
+
+// fullscreen functions
+
+var fullscreen_mode = false;
+var current_index = 0;
+
+function fullscreen(index)
+{
+    imageLoading();
+    current_index = index;
+    fullscreen_mode = true;
+    document.getElementById('container').classList.add('blur');
+    document.getElementById('footer').classList.add('blur');
+    document.getElementById('fcenter').innerHTML= '<img src="' + links[index].innerHTML + '" onload="imageLoaded()"/>';
+}
+
+function exitFullscreen()
+{
+    fullscreen_mode = false;
+    document.getElementById('container').classList.remove('blur');
+    document.getElementById('footer').classList.remove('blur');
+    document.getElementById('fcenter').innerHTML = '';
+}
+
 function previous()
 {
     imageLoading();
     current_index--;
-    var element = document.getElementById('center').getElementsByTagName('img')[0];
     if (current_index == -1)
         current_index = links.length - 1;
-    element.src = links[current_index].innerHTML;
+    document.getElementById('fcenter').getElementsByTagName('img')[0].src = links[current_index].innerHTML;
 }
 
 function next()
 {
     imageLoading();
     current_index++;
-    var element = document.getElementById('center').getElementsByTagName('img')[0];
     if (current_index == links.length)
         current_index = 0;
-    element.src = links[current_index].innerHTML;
+    document.getElementById('fcenter').getElementsByTagName('img')[0].src = links[current_index].innerHTML;
 }
+
+// keypress function
 
 function checkKey(e)
 {
-    if (!fullscreen_mode)
-        return;
     e = e || window.event;
-    switch (e.keyCode)
+    if (slideshow_mode)
     {
-        case 37: // left arrow
-            previous(); return;
-        case 39: // right arrow
-            next(); return;
-        case 27: // escape
-            exitFullscreen(); return;
+        switch (e.keyCode)
+        {
+            case 27: // escape
+                exitSlideshow(); return;
+            default: return;
+        }
     }
+    if (fullscreen_mode)
+    {
+        switch (e.keyCode)
+        {
+            case 37: // left arrow
+                previous(); return;
+            case 39: // right arrow
+                next(); return;
+            case 27: // escape
+                exitFullscreen(); return;
+            default: return;
+        }
+    }
+}
+
+function refreshLinks()
+{
+    links = document.getElementById('links').getElementsByTagName('p');
 }
 
 document.onkeydown = checkKey;

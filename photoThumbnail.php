@@ -3,8 +3,10 @@
 // Start caching
 ob_start();
 
+// Define important constants
 define("DEBUG_FILE", ".photo_cache_error_log.txt");
 define("CACHE_DIR", "cache/");
+define("MAX_THUMB_SIZE", 1000);
 
 // Parse parameters
 if (!isset($_GET["source"]) || !isset($_GET["height"]) || !isset($_GET["width"]))
@@ -12,8 +14,8 @@ if (!isset($_GET["source"]) || !isset($_GET["height"]) || !isset($_GET["width"])
     exit("Parameters are required.");
 }
 $source = $_GET["source"];
-$width = min($_GET['width'], 2000);
-$height = min($_GET['height'], 2000);
+$width = min($_GET['width'], MAX_THUMB_SIZE);
+$height = min($_GET['height'], MAX_THUMB_SIZE);
 $color_css = isset($_GET['color']) ? $_GET['color'] : "202020";
 $header = isset($_GET['no-header']) ? false : true;
 
@@ -61,22 +63,17 @@ try
     }
     else
     {
-        // soubor neexistuje - vytvoříme
-        // zjistíme si informace o zdrojovém obrázku
+        // File doesn't exist
         $info = getimagesize($source);
         $mime = $info['mime'];
         $src_width = $info[0];
         $src_height = $info[1];
 
-        // poměr obrázku
         $ratio = $src_width / $src_height;
-        // požadovaný poměr
         $req_ratio = $width / $height;
 
-        // požadovaný poměr je menší než zdrojového obrázku
         if ($ratio > $req_ratio)
         {
-            // použijeme šířku (jako konstantu)
             $new_width = $width;
             $new_height = $width / $ratio;
             $dest_x = 0;
@@ -84,14 +81,12 @@ try
         }
         else
         {
-            // použijeme výšku (jako konstantu)
             $new_width = $height * $ratio;
             $new_height = $height;
             $dest_x = ($width - $new_width) / 2 + 1;
             $dest_y = 0;
         }
 
-        // zvolíme funkce podle typu
         switch ($mime)
         {
             case "image/gif":
