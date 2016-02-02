@@ -3,12 +3,12 @@ error_reporting(E_ALL | E_STRICT);
 
 if (!file_exists("album"))
 {
-    trigger_error ("SimplePHPGallery: Unable to find 'album' directory. Abort.." , E_USER_NOTICE);
+    error_log("SimplePHPGallery: Unable to find 'album' directory. Abort." , E_USER_NOTICE);
     return;
 }
 if (!file_exists("cache"))
 {
-    trigger_error ("SimplePHPGallery:  Unable to find 'cache' directory. Thumbnails won't be cached." , E_USER_NOTICE);
+    error_log("SimplePHPGallery:  Unable to find 'cache' directory. Thumbnails won't be cached." , E_USER_NOTICE);
 }
 
 // Parse parameters
@@ -41,13 +41,7 @@ else
 // Read directory
 $dirs=array();
 $images=array();
-
 $directory = opendir($current_dir);
-if ($directory === FALSE)
-{
-    return;
-}
-
 while(($var=readdir($directory)) !== FALSE)
 {
     // Skip hidden files
@@ -83,7 +77,7 @@ if ($current_dir != "album")
     echo '
 <tr>
 <td>
-    <a href="index.php' . $parent_parameter . '">
+    <a href="index.php'.$parent_parameter.'">
         <div class="item">
             <p>&#8617;</p>
         </div>
