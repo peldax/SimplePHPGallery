@@ -1,6 +1,6 @@
 # Simple PHP Gallery
 
-[![Build Status](https://travis-ci.org/peldax/SimplePHPGallery.svg?branch=master)](https://travis-ci.org/peldax/SimplePHPGallery)
+[![Build Status](https://travis-ci.org/peldax/SimplePHPGallery.svg?branch=master)](https://travis-ci.org/peldax/SimplePHPGallery) [![Code Climate](https://codeclimate.com/repos/56b07ac62b93c0482f0011b9/badges/11560b247c74de3bbc1f/gpa.svg)](https://codeclimate.com/repos/56b07ac62b93c0482f0011b9/feed)
 
 Simple web gallery written in PHP - the one I use on my personal website (http://gallery.peldax.com).
 Gallery doesn't require jQuery or any other framework.
