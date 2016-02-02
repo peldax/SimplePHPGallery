@@ -86,12 +86,14 @@ h1, p, a
 
 .blur
 {
-    filter: blur(5px);
     -moz-filter: blur(5px);
     -webkit-filter: blur(5px);
-    transform: translate3d(0, 0, 0);
+    filter: blur(5px);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 /* *********** SLIDESHOW */
@@ -122,9 +124,10 @@ h1, p, a
     max-width: calc(100% - 30px);
     max-height: calc(98vh - 30px);
     pointer-events: none;
-    user-select: none;
+    -ms-user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 }
 
 /* *********** FULLSCREEN */
@@ -170,9 +173,10 @@ h1, p, a
     max-width: calc(100% - 30px);
     max-height: calc(98vh - 30px);
     pointer-events: none;
-    user-select: none;
+    -ms-user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 }
 
 /* *********** LOADING BOX */

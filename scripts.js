@@ -12,21 +12,34 @@ function imageLoaded()
     document.getElementById('loading').style.display = 'none';
 }
 
+// Blur
+
+function blur()
+{
+    document.getElementById('container').classList.add('blur');
+    document.getElementById('footer').classList.add('blur');
+}
+
+function clearBlur()
+{
+    document.getElementById('container').classList.remove('blur');
+    document.getElementById('footer').classList.remove('blur');
+}
+
 // Slideshow functions
 
 var slideshow_mode = false;
 
 function slideshow()
 {
-    if (links.length == 0)
+    if (links.length === 0)
     {
         alert("There are no images in this folder.");
         return;
     }
+    blur();
     imageLoading();
     slideshow_mode = true;
-    document.getElementById('container').classList.add('blur');
-    document.getElementById('footer').classList.add('blur');
     document.getElementById('scenter').innerHTML= '<img src="' + links[0].innerHTML + '" onload="imageLoaded()"/>';
     setTimeout(slideshowNext, 7000, 1);
 }
@@ -35,7 +48,7 @@ function slideshowNext(index)
 {
     if (!slideshow_mode)
         return;
-    if (index == links.length)
+    if (index === links.length)
         exitSlideshow();
     imageLoading();
     document.getElementById('scenter').getElementsByTagName('img')[0].src = links[index].innerHTML;
@@ -44,9 +57,8 @@ function slideshowNext(index)
 
 function exitSlideshow()
 {
+    clearBlur();
     slideshow_mode = false;
-    document.getElementById('container').classList.remove('blur');
-    document.getElementById('footer').classList.remove('blur');
     document.getElementById('scenter').innerHTML = '';
 }
 
@@ -57,19 +69,17 @@ var current_index = 0;
 
 function fullscreen(index)
 {
+    blur();
     imageLoading();
     current_index = index;
     fullscreen_mode = true;
-    document.getElementById('container').classList.add('blur');
-    document.getElementById('footer').classList.add('blur');
     document.getElementById('fcenter').innerHTML= '<img src="' + links[index].innerHTML + '" onload="imageLoaded()"/>';
 }
 
 function exitFullscreen()
 {
+    clearBlur();
     fullscreen_mode = false;
-    document.getElementById('container').classList.remove('blur');
-    document.getElementById('footer').classList.remove('blur');
     document.getElementById('fcenter').innerHTML = '';
 }
 
@@ -77,7 +87,7 @@ function previous()
 {
     imageLoading();
     current_index--;
-    if (current_index == -1)
+    if (current_index === -1)
         current_index = links.length - 1;
     document.getElementById('fcenter').getElementsByTagName('img')[0].src = links[current_index].innerHTML;
 }
@@ -86,7 +96,7 @@ function next()
 {
     imageLoading();
     current_index++;
-    if (current_index == links.length)
+    if (current_index === links.length)
         current_index = 0;
     document.getElementById('fcenter').getElementsByTagName('img')[0].src = links[current_index].innerHTML;
 }
@@ -101,7 +111,7 @@ function checkKey(e)
         switch (e.keyCode)
         {
             case 27: // escape
-                exitSlideshow(); return;
+                return exitSlideshow();
             default: return;
         }
     }
@@ -110,11 +120,11 @@ function checkKey(e)
         switch (e.keyCode)
         {
             case 37: // left arrow
-                previous(); return;
+                return previous();
             case 39: // right arrow
-                next(); return;
+                return next();
             case 27: // escape
-                exitFullscreen(); return;
+                return exitFullscreen();
             default: return;
         }
     }

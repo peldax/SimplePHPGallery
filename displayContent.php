@@ -8,7 +8,7 @@ if (!file_exists("album"))
 }
 if (!file_exists("cache"))
 {
-    error_log("SimplePHPGallery:  Unable to find 'cache' directory. Thumbnails won't be cached." , E_USER_NOTICE);
+    error_log("SimplePHPGallery: Unable to find 'cache' directory. Thumbnails won't be cached." , E_USER_NOTICE);
 }
 
 // Parse parameters
@@ -38,6 +38,7 @@ else
     $current_dir = "album/{$year}/{$month}/{$folder}";
     $parent_parameter = "?year={$year}&month={$month}";
 }
+
 // Read directory
 $dirs=array();
 $images=array();
