@@ -6,6 +6,9 @@ php:
   - '7.0'
   - hhvm
   - nightly
+before_script:
+  - mkdir album
+  - mkdir cache
 script: php index.php
 notifications:
   - email: false
