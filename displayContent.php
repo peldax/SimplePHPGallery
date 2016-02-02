@@ -1,6 +1,16 @@
 <?php
 error_reporting(E_ALL | E_STRICT);
 
+if (!file_exists("album"))
+{
+    trigger_error ("SimplePHPGallery: Unable to find 'album' directory. Abort.." , E_USER_NOTICE);
+    return;
+}
+if (!file_exists("cache"))
+{
+    trigger_error ("SimplePHPGallery:  Unable to find 'cache' directory. Thumbnails won't be cached." , E_USER_NOTICE);
+}
+
 // Parse parameters
 $year = isset($_GET["year"]) ? $_GET["year"] : "";
 $month = isset($_GET["month"]) ? $_GET["month"] : "";
@@ -33,7 +43,7 @@ $dirs=array();
 $images=array();
 
 $directory = opendir($current_dir);
-if ($directory == FALSE)
+if ($directory === FALSE)
 {
     return;
 }
