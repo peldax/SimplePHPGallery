@@ -90,6 +90,8 @@ h1, p, a
     -moz-filter: blur(5px);
     -webkit-filter: blur(5px);
     transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
 }
@@ -123,6 +125,7 @@ h1, p, a
     max-height: calc(98vh - 30px);
     pointer-events: none;
     user-select: none;
+    -ms-user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
 }
@@ -171,6 +174,7 @@ h1, p, a
     max-height: calc(98vh - 30px);
     pointer-events: none;
     user-select: none;
+    -ms-user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
 }
