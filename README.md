@@ -1,5 +1,7 @@
 # Simple PHP Gallery
 
+[![Build Status](https://travis-ci.org/peldax/SimplePHPGallery.svg?branch=master)](https://travis-ci.org/peldax/SimplePHPGallery)
+
 Simple web gallery written in PHP - the one I use on my personal website (http://gallery.peldax.com).
 Gallery doesn't require jQuery or any other framework.
 
