@@ -45,7 +45,7 @@ $directory = opendir($current_dir);
 while(($var=readdir($directory)) !== FALSE)
 {
     // Skip hidden files
-    if (substr($var, 0, 1) == '.')
+    if (substr($var, 0, 1) === '.')
     {
         continue;
     }
@@ -67,7 +67,6 @@ sort($dirs);
 
 // Create table
 echo '<table id="album">';
-
 $items_in_row = 0;
 $max_items_in_row = 5;
 
@@ -90,7 +89,7 @@ if ($current_dir != "album")
 // Add directories to the table
 foreach ($dirs as $x)
 {
-    if ($items_in_row == 0)
+    if ($items_in_row === 0)
     {
         echo '<tr>';
     }
@@ -104,7 +103,7 @@ foreach ($dirs as $x)
 </td>
 ';
     $items_in_row++;
-    if ($items_in_row == $max_items_in_row)
+    if ($items_in_row === $max_items_in_row)
     {
         echo '</tr>';
         $items_in_row = 0;
@@ -117,7 +116,7 @@ $links = array();
 
 foreach ($images as $x)
 {
-    if ($items_in_row == 0)
+    if ($items_in_row === 0)
     {
         echo '<tr>';
     }
@@ -135,7 +134,7 @@ foreach ($images as $x)
     $items_in_row++;
     $index++;
     array_push($links, $current_dir.'/'.$x);
-    if ($items_in_row == $max_items_in_row)
+    if ($items_in_row === $max_items_in_row)
     {
         echo '</tr>';
         $items_in_row = 0;
@@ -148,8 +147,11 @@ if ($items_in_row != $max_items_in_row)
     echo '<tr>';
 }
 
-// Add full image links to invisible div
-echo '</table><div id="links">';
+// Close table and add full image links to invisible div
+echo '
+</table>
+<div id="links">
+';
 foreach ($links as $x)
 {
     echo '<p>'.$x.'</p>';
