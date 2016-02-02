@@ -7,3 +7,5 @@ php:
   - hhvm
   - nightly
 script: phpunit index.php
+notifications:
+  email: false
