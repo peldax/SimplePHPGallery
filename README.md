@@ -43,7 +43,7 @@ Feel free to use or contribute.
 * v4.0 - Automatic slideshow, Sticky footer, Fullscreen mode - blur background
 * v4.1 - Directories are sorted
 
-## TODO
+## Issues
 
 Nothing at the moment.
 Do you miss some important feature? Feel free to contact me!
