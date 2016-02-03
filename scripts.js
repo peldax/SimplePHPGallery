@@ -24,7 +24,7 @@ function blur()
 
 function setHash(string)
 {
-    window.location.href = window.location.href.split('#')[0] + '#' + string;
+    window.location.hash = string;
 }
 
 // Clear
@@ -33,7 +33,7 @@ function clear()
 {
     document.getElementById('container').classList.remove('blur');
     document.getElementById('footer').classList.remove('blur');
-    window.location.href = window.location.href.split('#')[0];
+    window.location.hash = "";
 }
 
 // Slideshow functions
@@ -145,12 +145,12 @@ function checkKey(e)
 function initiate()
 {
     links = document.getElementById('links').getElementsByTagName('p');
-    var url = window.location.href.split('#');
-    if (url.length === 1)
+    var hash = window.location.hash;
+    if (hash === "")
         return;
-    if (url[1] === "slideshow")
+    if (hash === "slideshow")
         return slideshow();
-    var index = parseInt(url[1]);
+    var index = parseInt(hash);
     if (!isNaN(index) && index < links.length)
         return fullscreen(index);
 }
