@@ -42,6 +42,7 @@ Feel free to use or contribute.
     - v3.3.1 - Important security hotfix
 * v4.0 - Automatic slideshow, Sticky footer, Fullscreen mode - blur background
 * v4.1 - Directories are sorted
+* v5.0 - Hashlinks directly to image or slideshow
 
 ## Issues
 

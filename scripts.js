@@ -20,10 +20,20 @@ function blur()
     document.getElementById('footer').classList.add('blur');
 }
 
-function clearBlur()
+// Hash
+
+function setHash(string)
+{
+    window.location.href = window.location.href.split('#')[0] + '#' + string;
+}
+
+// Clear
+
+function clear()
 {
     document.getElementById('container').classList.remove('blur');
     document.getElementById('footer').classList.remove('blur');
+    window.location.href = window.location.href.split('#')[0];
 }
 
 // Slideshow functions
@@ -33,12 +43,11 @@ var slideshow_mode = false;
 function slideshow()
 {
     if (links.length === 0)
-    {
-        alert("There are no images in this folder.");
-        return;
-    }
+        return alert("There are no images in this folder.");
+
     blur();
     imageLoading();
+    setHash("slideshow");
     slideshow_mode = true;
     document.getElementById('scenter').innerHTML= '<img src="' + links[0].innerHTML + '" onload="imageLoaded()"/>';
     setTimeout(slideshowNext, 7000, 1);
@@ -57,7 +66,7 @@ function slideshowNext(index)
 
 function exitSlideshow()
 {
-    clearBlur();
+    clear();
     slideshow_mode = false;
     document.getElementById('scenter').innerHTML = '';
 }
@@ -73,12 +82,13 @@ function fullscreen(index)
     imageLoading();
     current_index = index;
     fullscreen_mode = true;
+    setHash(current_index.toString());
     document.getElementById('fcenter').innerHTML= '<img src="' + links[index].innerHTML + '" onload="imageLoaded()"/>';
 }
 
 function exitFullscreen()
 {
-    clearBlur();
+    clear();
     fullscreen_mode = false;
     document.getElementById('fcenter').innerHTML = '';
 }
@@ -89,6 +99,7 @@ function previous()
     current_index--;
     if (current_index === -1)
         current_index = links.length - 1;
+    setHash(current_index.toString());
     document.getElementById('fcenter').getElementsByTagName('img')[0].src = links[current_index].innerHTML;
 }
 
@@ -98,6 +109,7 @@ function next()
     current_index++;
     if (current_index === links.length)
         current_index = 0;
+    setHash(current_index.toString());
     document.getElementById('fcenter').getElementsByTagName('img')[0].src = links[current_index].innerHTML;
 }
 
@@ -130,10 +142,18 @@ function checkKey(e)
     }
 }
 
-function refreshLinks()
+function initiate()
 {
     links = document.getElementById('links').getElementsByTagName('p');
+    var url = window.location.href.split('#');
+    if (url.length === 1)
+        return;
+    if (url[1] === "slideshow")
+        return slideshow();
+    var index = parseInt(url[1]);
+    if (!isNaN(index) && index < links.length)
+        return fullscreen(index);
 }
 
 document.onkeydown = checkKey;
-window.onload = refreshLinks;
+window.onload = initiate;
