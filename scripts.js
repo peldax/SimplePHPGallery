@@ -1,15 +1,28 @@
 var links = [];
 
-// Loading box
+// Alert boxes
 
-function imageLoading()
+function displayAlert(message)
 {
-    document.getElementById('loading').style.display = 'block';
+    var element = document.getElementById('alert');
+    element.innerHTML = '<p>'+message+'</p>';
+    element.style.display = 'block';
 }
 
-function imageLoaded()
+function displayError(message)
 {
-    document.getElementById('loading').style.display = 'none';
+    var element = document.getElementById('alert');
+    element.innerHTML = '<p>'+message+'</p>';
+    element.style.display = 'block';
+    element.classList.add('error');
+    element.onclick = hideAlert;
+}
+
+function hideAlert()
+{
+    var element = document.getElementById('alert');
+    element.innerHTML = '';
+    element.style.display = 'none';
 }
 
 // Blur
@@ -43,13 +56,13 @@ var slideshow_mode = false;
 function slideshow()
 {
     if (links.length === 0)
-        return alert("There are no images in this folder.");
+        return displayError('There are no images in this folder.');
 
+    displayAlert('Loading...');
     blur();
-    imageLoading();
     setHash("slideshow");
     slideshow_mode = true;
-    document.getElementById('scenter').innerHTML= '<img src="' + links[0].innerHTML + '" onload="imageLoaded()"/>';
+    document.getElementById('scenter').innerHTML= '<img src="' + links[0].innerHTML + '" onload="hideAlert()"/>';
     setTimeout(slideshowNext, 7000, 1);
 }
 
@@ -59,7 +72,8 @@ function slideshowNext(index)
         return;
     if (index === links.length)
         exitSlideshow();
-    imageLoading();
+
+    displayAlert('Loading...');
     document.getElementById('scenter').getElementsByTagName('img')[0].src = links[index].innerHTML;
     setTimeout(slideshowNext, 7000, index + 1);
 }
@@ -78,12 +92,12 @@ var current_index = 0;
 
 function fullscreen(index)
 {
+    displayAlert('Loading...');
     blur();
-    imageLoading();
     current_index = index;
     fullscreen_mode = true;
     setHash(current_index.toString());
-    document.getElementById('fcenter').innerHTML= '<img src="' + links[index].innerHTML + '" onload="imageLoaded()"/>';
+    document.getElementById('fcenter').innerHTML= '<img src="' + links[index].innerHTML + '" onload="hideAlert()"/>';
 }
 
 function exitFullscreen()
@@ -95,7 +109,7 @@ function exitFullscreen()
 
 function previous()
 {
-    imageLoading();
+    displayAlert('Loading...');
     current_index--;
     if (current_index === -1)
         current_index = links.length - 1;
@@ -105,7 +119,7 @@ function previous()
 
 function next()
 {
-    imageLoading();
+    displayAlert('Loading...');
     current_index++;
     if (current_index === links.length)
         current_index = 0;
@@ -150,6 +164,7 @@ function initiate()
         return;
     if (hash === "slideshow")
         return slideshow();
+
     var index = parseInt(hash);
     if (!isNaN(index) && index < links.length)
         return fullscreen(index);

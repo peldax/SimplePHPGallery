@@ -44,6 +44,7 @@ Feel free to use or contribute.
 * v4.1 - Directories are sorted
 * v5.0 - Hashlinks directly to image or slideshow
 * v5.1 - Hashlink doesn't refresh page
+* v5.2 - Error box instead of alerts
 
 ## Issues
 

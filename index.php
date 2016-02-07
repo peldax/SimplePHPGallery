@@ -15,9 +15,7 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:300,700,400' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-        <div id="loading">
-            <p>Loading...</p>
-        </div>
+        <div id="alert"></div>
         <div id="fullscreen">
             <div id="left" onclick="previous()"></div>
             <div id="fcenter" onclick="exitFullscreen()"></div>

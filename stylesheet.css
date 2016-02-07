@@ -179,27 +179,38 @@ h1, p, a
     user-select: none;
 }
 
-/* *********** LOADING BOX */
+/* *********** BOXES */
 
-#loading
+#alert
 {
     display: none;
     position: fixed;
     z-index: 11;
+    height: 120px;
     width: 200px;
-    height: 100px;
-    top: calc(50vh - 50px);
-    left: calc(50% - 100px);
+    top: calc(50vh - 100px);
+    left: calc(50% - 60px);
     border: 3px solid #FFFFFF;
     border-radius: 10px;
     background: #303030;
+    cursor: pointer;
 }
 
-#loading p
+#alert p
 {
-    line-height: 100px;
+    line-height: 120px;
     font-size: 1.5em;
     text-align: center;
+}
+
+.error
+{
+    border: 3px solid #C00000 !important;
+}
+
+.error p
+{
+    line-height: 40px !important;
 }
 
 /* *********** MENU */
