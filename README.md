@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/peldax/SimplePHPGallery.svg?branch=master)](https://travis-ci.org/peldax/SimplePHPGallery)
 
+[![Code Climate](https://codeclimate.com/github/peldax/SimplePHPGallery/badges/gpa.svg)](https://codeclimate.com/github/peldax/SimplePHPGallery)
+
 Simple web gallery written in PHP - the one I use on my personal website (http://gallery.peldax.com).
 Gallery doesn't require jQuery or any other framework.
 
