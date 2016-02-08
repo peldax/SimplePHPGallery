@@ -224,7 +224,7 @@ h1, p, a
     margin: 20px;
 }
 
-#buttons *
+#buttons a, #buttons div
 {
     cursor: pointer;
 }
