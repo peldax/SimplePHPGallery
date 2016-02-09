@@ -190,7 +190,6 @@ h1, p, a
     width: 200px;
     top: calc(50vh - 100px);
     left: calc(50% - 60px);
-    border: 3px solid #FFFFFF;
     border-radius: 10px;
     background: #303030;
     cursor: pointer;
@@ -198,19 +197,28 @@ h1, p, a
 
 #alert p
 {
-    line-height: 120px;
     font-size: 1.5em;
     text-align: center;
 }
 
+.info
+{
+    border: 3px solid #FFFFFF;
+}
+
+.info p
+{
+    line-height: 120px;
+}
+
 .error
 {
-    border: 3px solid #C00000 !important;
+    border: 3px solid #C00000;
 }
 
 .error p
 {
-    line-height: 40px !important;
+    line-height: 40px;
 }
 
 /* *********** MENU */
