@@ -2,8 +2,10 @@
 
 [![Version](https://img.shields.io/badge/version-5.2-brightgreen.svg)](https://github.com/peldax/SimplePHPGallery/releases/tag/v5.2)
 
-[![Build Status](https://travis-ci.org/peldax/SimplePHPGallery.svg?branch=master)](https://travis-ci.org/peldax/SimplePHPGallery)
+[![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)](https://github.com/peldax/SimplePHPGallery/releases)
+[![Issues](https://img.shields.io/badge/issues-1-green.svg)](https://github.com/peldax/SimplePHPGallery/issues)
 
+[![Build Status](https://travis-ci.org/peldax/SimplePHPGallery.svg?branch=master)](https://travis-ci.org/peldax/SimplePHPGallery)
 [![Code Climate](https://codeclimate.com/github/peldax/SimplePHPGallery/badges/gpa.svg)](https://codeclimate.com/github/peldax/SimplePHPGallery)
 
 Simple web gallery written in PHP - the one I use on my personal website (http://gallery.peldax.com).
