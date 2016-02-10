@@ -30,6 +30,7 @@ Feel free to use or contribute.
 1. Style your gallery in stylesheet.css.
 2. Change HTML elements such as head and footer to your needs in index.php.
 3. Customize your error page in error.php.
+4. Change some important constants in php files.
 
 ## Other Contributors
 
@@ -51,6 +52,7 @@ Feel free to use or contribute.
 * v5.0 - Hashlinks directly to image or slideshow
 * v5.1 - Hashlink doesn't refresh page
 * v5.2 - Error boxes instead of alerts
+* v6.0 - Watermarks
 
 ## Issues
 

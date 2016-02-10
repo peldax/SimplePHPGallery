@@ -6,10 +6,6 @@ if (!file_exists("album"))
     error_log("SimplePHPGallery: Unable to find 'album' directory. Abort." , E_USER_NOTICE);
     return;
 }
-if (!file_exists("cache"))
-{
-    error_log("SimplePHPGallery: Unable to find 'cache' directory. Thumbnails won't be cached." , E_USER_NOTICE);
-}
 
 // Parse parameters
 $year = isset($_GET["year"]) ? $_GET["year"] : "";
@@ -127,7 +123,7 @@ foreach ($images as $x)
         <img width="100%" height="100%"
         alt="Image from Václav Pelíšek\'s gallery at gallery.peldax.com"
         title="A collection of photos from my experiences and adventures"
-        src="photoThumbnail.php?source='.$current_dir.'/'.$x.'&height=150&width=150"
+        src="photoThumbnail.php?source='.$current_dir.'/'.$x.'"
         onclick="fullscreen('.$index.')" />
     </div>
 </td>
@@ -155,6 +151,6 @@ echo '
 ';
 foreach ($links as $x)
 {
-    echo '<p>'.$x.'</p>';
+    echo '<p>photoWatermark.php?source='.$x.'</p>';
 }
 echo '</div>';

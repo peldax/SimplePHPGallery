@@ -4,22 +4,22 @@
 ob_start();
 
 // Define important constants
-define("DEBUG_FILE", ".thumbnail_error_log.txt");
-define("CACHE_DIR", "cache/thumbnails/");
-define("THUMB_SIZE_X", 150);
-define("THUMB_SIZE_Y", 150);
-define("BACK_COLOR", "202020");
-
+define("DEBUG_FILE", ".watermark_error_log.txt");
+define("CACHE_DIR", "cache/watermarks/");
+define("WATERMARK_TEXT", "gallery.peldax.com");
+define("FONT", "Lato-Regular.ttf");
+define("FONT_SIZE", 1/45);
+define("FONT_COLOR", "FFFFFF");
 
 if (!file_exists(CACHE_DIR))
 {
-    error_log("SimplePHPGallery-Thumbnails: Unable to find thumbnails cache directory. Thumbnails won't be cached." , E_USER_NOTICE);
+    error_log("SimplePHPGallery-Watermarks: Unable to find watermarks cache directory. Watermarks won't be cached." , E_USER_NOTICE);
 }
 
 // Parse parameters
 if (!isset($_GET["source"]))
 {
-    error_log("SimplePHPGallery-Thumbnails: Source file not specified." , E_USER_NOTICE);
+    error_log("SimplePHPGallery-Watermarks: Source file not specified." , E_USER_NOTICE);
     return;
 }
 $source = $_GET["source"];
@@ -28,14 +28,14 @@ $base_name = basename(substr($source, 0, strrpos($source, '.')));
 $extension = substr(strrchr($source, '.'), 1);
 $hash = md5($source);
 
-$cache_file = CACHE_DIR."/{$base_name}_".THUMB_SIZE_X."x".THUMB_SIZE_Y."_{$hash}.{$extension}";
+$cache_file = CACHE_DIR."/{$base_name}_{$hash}.{$extension}";
 
 $error_str = "";
 $img = null;
 
 try
 {
-    // Cached thumbnail is ready
+    // Cached watermark is ready
     if (file_exists($cache_file))
     {
         $info = getimagesize($cache_file);
@@ -66,34 +66,16 @@ try
     // Source doesn't exist
     else if (!file_exists($source))
     {
-        error_log("SimplePHPGallery-Thumbnails: {$source} doesn't exist." , E_USER_NOTICE);
+        error_log("SimplePHPGallery-Watermarks: {$source} doesn't exist." , E_USER_NOTICE);
         return;
     }
-    // Cached thumbnails is not ready
+    // Cached watermark is not ready
     else
     {
         $info = getimagesize($source);
         $mime = $info['mime'];
         $src_width = $info[0];
         $src_height = $info[1];
-
-        $ratio = $src_width / $src_height;
-        $req_ratio = THUMB_SIZE_X / THUMB_SIZE_Y;
-
-        if ($ratio > $req_ratio)
-        {
-            $new_width = THUMB_SIZE_X;
-            $new_height = THUMB_SIZE_X / $ratio;
-            $dest_x = 0;
-            $dest_y = (THUMB_SIZE_Y - $new_height) / 2 + 1;
-        }
-        else
-        {
-            $new_width = THUMB_SIZE_Y * $ratio;
-            $new_height = THUMB_SIZE_Y;
-            $dest_x = (THUMB_SIZE_X - $new_width) / 2 + 1;
-            $dest_y = 0;
-        }
 
         switch ($mime)
         {
@@ -115,37 +97,34 @@ try
 
         // Check memory
         $memoryNeeded = round(($src_width * $src_height * $info['bits'] *
-            $info['channels'] / 8 + Pow(2, 16)) * 1.65);
+                $info['channels'] / 8 + Pow(2, 16)) * 1.65);
 
         if (function_exists('memory_get_usage') &&
             memory_get_usage() + $memoryNeeded > (integer) ini_get('memory_limit') * pow(1024, 2))
         {
             $limit = (integer) ini_get('memory_limit') + ceil(((memory_get_usage() +
-                $memoryNeeded) - (integer) ini_get('memory_limit') *
-                pow(1024, 2)) / pow(1024, 2));
+                            $memoryNeeded) - (integer) ini_get('memory_limit') *
+                        pow(1024, 2)) / pow(1024, 2));
             $set = ini_set('memory_limit', ($limit + 1) . 'M');
         }
 
-        // Create image
-        $img = imagecreatetruecolor(THUMB_SIZE_X, THUMB_SIZE_Y);
-
         // Load source image
-        $src_image = call_user_func($create_function, $source);
+        $img= call_user_func($create_function, $source);
 
-        // Fill image with color
-        $red = hexdec(substr(BACK_COLOR, 0, 2));
-        $green = hexdec(substr(BACK_COLOR, 2, 2));
-        $blue = hexdec(substr(BACK_COLOR, 4, 2));
-        $fill_color = imagecolorallocate($img, $red, $green, $blue);
-        imagefill($img, 0, 0, $fill_color);
+        // Fill
+        $red = hexdec(substr(FONT_COLOR, 0, 2));
+        $green = hexdec(substr(FONT_COLOR, 2, 2));
+        $blue = hexdec(substr(FONT_COLOR, 4, 2));
+        $font_color = imagecolorallocate($img, $red, $green, $blue);
 
-        // Resize image
-        imagecopyresampled($img, $src_image,
-            $dest_x, $dest_y, 0, 0,
-            $new_width, $new_height, $src_width, $src_height);
+        // Set up font
+        $font_path = realpath('.');
+        putenv('GDFONTPATH='.$font_path);
 
-        // Destroy old image
-        imagedestroy($src_image);
+        $font_size = $src_height * FONT_SIZE;
+
+        // Write watermark
+        imagettftext($img, $font_size, 0, $font_size, $font_size * 1.2, $font_color, FONT, WATERMARK_TEXT);
 
         // Create image and save
         call_user_func($function, $img, $cache_file);
@@ -174,4 +153,3 @@ catch (Exception $e)
     fwrite($file, $e->getMessage()."\n");
     fclose($file);
 }
-
