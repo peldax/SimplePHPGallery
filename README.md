@@ -1,6 +1,6 @@
 # Simple PHP Gallery
 
-[![Version](https://img.shields.io/badge/version-6.0-brightgreen.svg)](https://github.com/peldax/SimplePHPGallery/releases/tag/v5.2)
+[![Version](https://img.shields.io/badge/version-6.0-brightgreen.svg)](https://github.com/peldax/SimplePHPGallery/releases/tag/v6.0)
 
 [![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)](https://github.com/peldax/SimplePHPGallery/releases)
 [![Issues](https://img.shields.io/badge/issues-2-green.svg)](https://github.com/peldax/SimplePHPGallery/issues)
