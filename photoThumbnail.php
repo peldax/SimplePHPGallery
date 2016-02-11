@@ -10,7 +10,6 @@ define("THUMB_SIZE_X", 150);
 define("THUMB_SIZE_Y", 150);
 define("BACK_COLOR", "202020");
 
-
 if (!file_exists(CACHE_DIR))
 {
     error_log("SimplePHPGallery-Thumbnails: Unable to find thumbnails cache directory. Thumbnails won't be cached." , E_USER_NOTICE);

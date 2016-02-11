@@ -1,5 +1,9 @@
 <?php
+
 error_reporting(E_ALL | E_STRICT);
+
+// Define important constants
+define("USE_WATERMARK", true);
 
 if (!file_exists("album"))
 {
@@ -46,13 +50,11 @@ while(($var=readdir($directory)) !== FALSE)
     {
         continue;
     }
-
     // Read dir
     else if (is_dir($current_dir.'/'.$var))
     {
         array_push($dirs, $var);
     }
-
     // Read file
     else
     {
@@ -67,19 +69,10 @@ echo '<table id="album">';
 $items_in_row = 0;
 $max_items_in_row = 5;
 
-// Add link to parent folder tp the table
+// Add link to parent folder to the table
 if ($current_dir != "album")
 {
-    echo '
-<tr>
-<td>
-    <a href="index.php'.$parent_parameter.'">
-        <div class="item">
-            <p>&#8617;</p>
-        </div>
-    </a>
-</td>
-    ';
+    echo '<tr><td><a href="index.php'.$parent_parameter.'"><div class="item"><p>&#8617;</p></div></a></td>';
     $items_in_row++;
 }
 
@@ -90,15 +83,7 @@ foreach ($dirs as $x)
     {
         echo '<tr>';
     }
-    echo '
-<td>
-    <a href="index.php'.$next_parameter.$x.'">
-        <div class="item">
-            <p>'.$x.'</p>
-        </div>
-    </a>
-</td>
-';
+    echo '<td><a href="index.php'.$next_parameter.$x.'"><div class="item"><p>'.$x.'</p></div></a></td>';
     $items_in_row++;
     if ($items_in_row === $max_items_in_row)
     {
@@ -117,17 +102,13 @@ foreach ($images as $x)
     {
         echo '<tr>';
     }
-    echo '
-<td>
-    <div class="item">
-        <img width="100%" height="100%"
+
+    echo '<td><div class="item"><img width="100%" height="100%"
         alt="Image from Václav Pelíšek\'s gallery at gallery.peldax.com"
         title="A collection of photos from my experiences and adventures"
-        src="photoThumbnail.php?source='.$current_dir.'/'.$x.'"
-        onclick="fullscreen('.$index.')" />
-    </div>
-</td>
-';
+        onclick="fullscreen('.$index.')"
+        src="photoThumbnail.php?source='.$current_dir.'/'.$x.'" /></div></td>';
+
     $items_in_row++;
     $index++;
     array_push($links, $current_dir.'/'.$x);
@@ -145,12 +126,16 @@ if ($items_in_row != $max_items_in_row)
 }
 
 // Close table and add full image links to invisible div
-echo '
-</table>
-<div id="links">
-';
+echo '</table><div id="links">';
 foreach ($links as $x)
 {
-    echo '<p>photoWatermark.php?source='.$x.'</p>';
+    if (USE_WATERMARK)
+    {
+        echo '<p>photoWatermark.php?source='.$x.'</p>';
+    }
+    else
+    {
+        echo '<p>'.$x.'</p>';
+    }
 }
 echo '</div>';

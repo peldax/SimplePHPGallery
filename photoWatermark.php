@@ -8,7 +8,7 @@ define("DEBUG_FILE", ".watermark_error_log.txt");
 define("CACHE_DIR", "cache/watermarks/");
 define("WATERMARK_TEXT", "gallery.peldax.com");
 define("FONT", "Lato-Regular.ttf");
-define("FONT_SIZE", 1/45);
+define("FONT_SIZE", 1/50);
 define("FONT_COLOR", "FFFFFF");
 
 if (!file_exists(CACHE_DIR))

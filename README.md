@@ -1,15 +1,17 @@
 # Simple PHP Gallery
 
-[![Version](https://img.shields.io/badge/version-5.2-brightgreen.svg)](https://github.com/peldax/SimplePHPGallery/releases/tag/v5.2)
+[![Version](https://img.shields.io/badge/version-6.0-brightgreen.svg)](https://github.com/peldax/SimplePHPGallery/releases/tag/v5.2)
 
 [![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)](https://github.com/peldax/SimplePHPGallery/releases)
-[![Issues](https://img.shields.io/badge/issues-1-green.svg)](https://github.com/peldax/SimplePHPGallery/issues)
+[![Issues](https://img.shields.io/badge/issues-2-green.svg)](https://github.com/peldax/SimplePHPGallery/issues)
 
 [![Build Status](https://travis-ci.org/peldax/SimplePHPGallery.svg?branch=master)](https://travis-ci.org/peldax/SimplePHPGallery)
 [![Code Climate](https://codeclimate.com/github/peldax/SimplePHPGallery/badges/gpa.svg)](https://codeclimate.com/github/peldax/SimplePHPGallery)
 
 Simple web gallery written in PHP - the one I use on my personal website (http://gallery.peldax.com).
 Gallery doesn't require jQuery or any other framework.
+
+The only requirement is the php-gd library.
 
 Gallery is designed to be:
 
@@ -22,7 +24,7 @@ Feel free to use or contribute.
 ## How to set
 
 1. Download the sources and upload them to your server.
-2. Create a directory named "cache" (for cached thumbnails) and "album" (for your images) in the same folder.
+2. Create a directories named "cache/thumbnails", "cache/watermarks" and "album" in the same folder.
 3. Copy your pictures/directories into the "album" folder (album/year/month/folder/image).
 
 ## How to customize
