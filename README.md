@@ -32,7 +32,7 @@ Feel free to use or contribute.
 1. Style your gallery in stylesheet.css.
 2. Change HTML elements such as head and footer to your needs in index.php.
 3. Customize your error page in error.php.
-4. Change some important constants in php files.
+4. Change some important constants in php files (especially thumbnail and watermark settings).
 
 ## Other Contributors
 
