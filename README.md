@@ -32,11 +32,15 @@ Feel free to use or contribute.
 1. Style your gallery in stylesheet.css.
 2. Change HTML elements such as head and footer to your needs in index.php.
 3. Customize your error page in error.php.
-4. Change some important constants in php files (especially thumbnail and watermark settings).
+4. Change important constants by modifying parameters of 'define';
+    - Turn of watermarks in displayContent.php.
+    - Modify thumbnail settings in photoThumbnail.php.
+    - Change watermark settings in photoWatermark.php.
 
 ## Other Contributors
 
 [Jiří Fatka](https://github.com/NTSFka) - script for image thumbnails.
+[Google Fonts - Lato](https://www.google.com/fonts/specimen/Lato) - font is included because of watermarks.
 
 ## Changelog
 
