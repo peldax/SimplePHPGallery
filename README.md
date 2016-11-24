@@ -5,7 +5,6 @@
 [![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)](https://github.com/peldax/SimplePHPGallery/releases)
 [![Issues](https://img.shields.io/badge/issues-2-green.svg)](https://github.com/peldax/SimplePHPGallery/issues)
 
-[![Build Status](https://travis-ci.org/peldax/SimplePHPGallery.svg?branch=master)](https://travis-ci.org/peldax/SimplePHPGallery)
 [![Code Climate](https://codeclimate.com/github/peldax/SimplePHPGallery/badges/gpa.svg)](https://codeclimate.com/github/peldax/SimplePHPGallery)
 
 Simple web gallery written in PHP - the one I use on my personal website (http://gallery.peldax.com).
@@ -33,7 +32,7 @@ Feel free to use or contribute.
 2. Change HTML elements such as head and footer to your needs in index.php.
 3. Customize your error page in error.php.
 4. Change important constants by modifying parameters of 'define';
-    - Turn of watermarks in displayContent.php.
+    - Turn off watermarks in displayContent.php.
     - Modify thumbnail settings in photoThumbnail.php.
     - Change watermark settings in photoWatermark.php.
 
