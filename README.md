@@ -10,8 +10,6 @@
 Simple web gallery written in PHP - the one I use on my personal website (http://gallery.peldax.com).
 Gallery doesn't require jQuery or any other framework.
 
-The only requirement is the php-gd library.
-
 Gallery is designed to be:
 
 * Lightweight
@@ -19,6 +17,10 @@ Gallery is designed to be:
 * Free
 
 Feel free to use or contribute.
+
+## Requirements
+
+1. `php-gd` library. 
 
 ## How to set
 
@@ -40,7 +42,7 @@ Feel free to use or contribute.
 
 [Jiří Fatka](https://github.com/NTSFka) - script for image thumbnails.
 
-[Google Fonts - Lato](https://www.google.com/fonts/specimen/Lato) - font is included because of watermarks.
+[Google Fonts - Lato](https://www.google.com/fonts/specimen/Lato) - font is included.
 
 ## Changelog
 
@@ -63,4 +65,4 @@ Feel free to use or contribute.
 ## Issues
 
 Nothing at the moment.
-Do you miss some important feature? Feel free to contact me!
+Do you miss some important feature? Feel free to contact me or create pull request yourself.
