@@ -38,7 +38,7 @@ Feel free to use or contribute.
     - Modify thumbnail settings in photoThumbnail.php.
     - Change watermark settings in photoWatermark.php.
 
-## Other Contributors
+## Credits
 
 [Jiří Fatka](https://github.com/NTSFka) - script for image thumbnails.
 
