@@ -39,6 +39,7 @@ Feel free to use or contribute.
 ## Other Contributors
 
 [Jiří Fatka](https://github.com/NTSFka) - script for image thumbnails.
+
 [Google Fonts - Lato](https://www.google.com/fonts/specimen/Lato) - font is included because of watermarks.
 
 ## Changelog
